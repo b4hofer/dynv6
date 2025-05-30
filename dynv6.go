@@ -1,9 +1,9 @@
 package dynv6
 
 import (
+	dynv6 "github.com/b4hofer/libdns-dynv6"
 	"github.com/caddyserver/caddy/v2"
 	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	"github.com/libdns/dynv6"
 )
 
 // Provider wraps the provider implementation as a Caddy module.
@@ -30,9 +30,9 @@ func (p *Provider) Provision(ctx caddy.Context) error {
 
 // UnmarshalCaddyfile sets up the DNS provider from Caddyfile tokens. Syntax:
 //
-// dynv6 [<token>] {
-//     token <token>
-// }
+//	dynv6 [<token>] {
+//	    token <token>
+//	}
 //
 // Expansion of placeholders in the API token is left to the JSON config caddy.Provisioner (above).
 func (p *Provider) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
